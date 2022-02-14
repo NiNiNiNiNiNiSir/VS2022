@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1.View
 {
@@ -22,6 +23,18 @@ namespace WpfApp1.View
         public LoginView()
         {
             InitializeComponent();
+            this.DataContext = new LoginViewModel();//挂载
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WinMove_LeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.LeftButton==MouseButtonState.Pressed)
+            { this.DragMove(); }
         }
     }
 }
